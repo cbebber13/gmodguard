@@ -12,3 +12,28 @@
 	- Miscellaneous clientside code.
 
 ]]--
+
+function _R.bf_read:ReadColor()
+
+	return Color( self:ReadChar() + 128, self:ReadChar() + 128, self:ReadChar() + 128 )
+end
+
+function gmodguard.RecieveChatNotify( um )
+
+	local tab = {}
+
+	table.insert( tab, Color( 255, 0, 0 ) )
+	table.insert( tab, "[GModGuard] " )
+
+	local num = um:ReadShort()
+	for i = 1, num, 1 do
+
+		table.insert( tab, um:ReadColor() )
+		table.insert( tab, um:ReadString() )
+
+	end
+
+	chat.AddText( unpack( tab ) )
+
+end
+usermessage.Hook( "GG_ChatNotify", gmodguard.RecieveChatNotify )
