@@ -1,0 +1,42 @@
+#GModGuard Config File - config.txt
+
+#This should be in the GModGuard folder in garrysmod/addons!
+#All lines beginning with # will be ignored when loading config.
+#The file follows the format var=value (no spaces around the = and no quotes around value!)
+
+#API Access
+#If you are using the 'read-only' version of GModGuard, leave this line commented out.
+#If you are using the full version, please enter the apikey you were given for THIS SERVERS IP.
+
+#apikey=your_api_key
+
+
+#Enforce Global Bans
+#By default, GModGuard will NOT enforce global bans on your server, if you wish to block players who
+#have global bans from joining your server, change this to true.
+
+enforce_global=false
+
+
+#Admin Mod
+#This will allow your admin mod to use GModGuard, by default we have included plugin files for
+#ULX, FAdmin and Evolve. If you set this, it will try and load lua/gmodguard/plugins/sh_<value>.lua.
+#eg, setting this to "ulx" will tell GModGuard to load it's ULX plugin - lua/gmodguard/plugins/sh_ulx.lua
+#Three included plugins are "ulx", "fadmin" and "evolve" respectively.
+
+admin_mod=ulx
+
+
+#Notify Level
+#This value controls how GModGuard notifies you when a player with previous local/global bans joins your
+#server, possible values:
+#all - notifies ALL online players
+#admin - notifies online admins. (including superadmins)
+#sadmin - notifies only online superadmins.
+#logonly - logs to just the servers console & log files.
+#none - do not notify or record at all.
+
+local_notify=admin
+global_notify=all
+
+
