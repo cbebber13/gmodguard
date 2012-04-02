@@ -40,7 +40,8 @@ if SERVER then
 		if v[ 1 ] == "#" then continue end -- comments :)
 	 	local equals = string.find( v, "=" )
 	 	if not equals then continue end
-		gmodguard.config[ string.sub( v, 1, equals - 1 ) ] = string.sub( v, equals + 1 )
+
+		gmodguard.config[ string.sub( v, 1, equals - 1 ) ] = string.sub( v, equals + 1, #v - 1 )
 
 	end
 
@@ -107,24 +108,10 @@ if SERVER and gmodguard.config.admin_mod then
 	MsgN( "[GModGuard] Loading Admin Mod Plugin: " .. gmodguard.config.admin_mod )
 
 	local plugin = "gmodguard/plugins/sh_" .. gmodguard.config.admin_mod .. ".lua"
- 
 	AddCSLuaFile( plugin )
 	include( plugin )
 
 	MsgN( "[GModGuard] Admin Mod Plugin loaded: " .. gmodguard.config.admin_mod )
-
-elseif CLIENT then
-
-	local plugins = file.FindInLua( "gmodguard/plugins/sh_*.lua" )
-	if plugins and plugins[ 1 ] then
-
-		MsgN( "[GModGuard] Loading Admin Mod Plugin: " .. plugins[ 1 ] )
-
-		include( "gmodguard/plugins/" .. plugins[ 1 ] )
-
-		MsgN( "[GModGuard] Admin Mod Plugin loaded: " ..  plugins[ 1 ] )
-
-	end
 
 end
 

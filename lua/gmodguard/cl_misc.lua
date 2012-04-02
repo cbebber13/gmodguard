@@ -37,3 +37,16 @@ function gmodguard.RecieveChatNotify( um )
 
 end
 usermessage.Hook( "GG_ChatNotify", gmodguard.RecieveChatNotify )
+
+function gmodguard.RecieveAdminMod( um )
+
+	local plugin = um:ReadString()
+
+	MsgN( "[GModGuard] Loading Admin Mod Plugin: " .. plugin )
+
+	include( "gmodguard/plugins/sh_" .. plugin .. ".lua" )
+
+	MsgN( "[GModGuard] Admin Mod Plugin loaded: " ..  plugin )
+
+end
+usermessage.Hook( "GG_AdminMod", gmodguard.RecieveAdminMod )
