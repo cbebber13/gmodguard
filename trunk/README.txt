@@ -30,7 +30,7 @@ www.gmodguard.com
 
 Installation:
 1 - Somehow get the GModGuard folder into addons/
-2 - If you have one, enter your API key into apikey.txt
+2 - Read and edit config.txt
 3 - Restart your server and GModGuard should be active.
 
 Usage:
