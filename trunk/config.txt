@@ -5,8 +5,8 @@
 #The file follows the format var=value (no spaces around the = and no quotes around value!)
 
 #API Access
-#If you are using the 'read-only' version of GModGuard, leave this line commented out.
-#If you are using the full version, please enter the apikey you were given for THIS SERVERS IP.
+#If you only have 'read-only' access to the GModGuard database, leave this line commented out.
+#If you were approved to have full access, please enter the apikey you were given for THIS SERVERS IP.
 
 #apikey=your_api_key
 
