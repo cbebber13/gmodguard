@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"				"GModGuard"
+	"version"			"0.1"
+	"up_date"			""
+	"author_name"			"Phoenixf129/Bzaraticus/Drakehawke"
+	"author_email"			""
+	"author_url"			"www.gmodguard.com"
+	"info"				""
+	"override"			"0"
+}
